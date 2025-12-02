@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poiret+One&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <title>Gloves Template</title>
+
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+ .navbar {
+      background: linear-gradient(90deg, #001106, #0f5b86);
+    }
+
+    .navbar-brand i {
+      animation: flip 3s infinite linear;
+    }
+
+    @keyframes flip {
+      0% {
+        transform: rotateY(0);
+      }
+
+      100% {
+        transform: rotateY(360deg);
+      }
+    }
+
+    .nav-link {
+      color: white !important;
+      font-weight: 500;
+      margin-right: 15px;
+    }
+
+    .nav-link:hover {
+      color: #ffd700 !important;
+    }
+
+    .nav-link i {
+      font-size: 1rem;
+      vertical-align: middle;
+    }
+
+    .search-input {
+      border-radius: 25px;
+      padding-left: 15px;
+      width: 250px;
+      transition: width 0.3s ease;
+    }
+
+    .search-input:focus {
+      width: 350px;
+      outline: none;
+      box-shadow: 0 0 5px #ffd700;
+    }
+
+    .btn-sign {
+      border-radius: 25px;
+      font-weight: 500;
+      margin-left: 10px;
+    }
+
+    .btn-signin {
+      background-color: white;
+      color: #0d6efd;
+    }
+
+    .btn-signin:hover {
+      background-color: #f8f9fa;
+      color: #0a58ca;
+    }
+
+    .btn-signup {
+      background-color: #ffd700;
+      color: #000;
+    }
+
+    .btn-signup:hover {
+      background-color: #ffc107;
+    }
+
+    @media (max-width: 991px) {
+      /* Center links and buttons in mobile view */
+      .navbar-collapse {
+        text-align: center;
+      }
+
+      .navbar-nav {
+        margin-bottom: 1rem;
+      }
+
+      .navbar .d-flex {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .navbar form {
+        justify-content: center;
+      }
+    }
+
+    .form-control {
+      border-radius: 10px;
+    }
+
+    .btn-primary {
+      border-radius: 25px;
+    }
+
+    body {
+      margin: 0;
+    }
+
+
+    .content {
+      transition: margin-left 0.3s ease;
+      padding: 40px;
+    }
+
+    @media (max-width: 992px) {
+      .content {
+        margin-left: 0;
+      }
+    }
+
+    .about-section {
+      background: linear-gradient(195deg, #1f2020ff, #635362ff);
+      color: white;
+      border-radius: 2rem;
+      text-align: center;
+    }
+
+
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(253, 254, 255, 0.2);
+    }
+
+    .mission {
+      background: linear-gradient(135deg, #44cc61, #aa2e77);
+    }
+
+    .vision {
+      background: linear-gradient(135deg, #56810f, #2575fc);
+    }
+
+    .team {
+      background: linear-gradient(135deg, #00b09b, #96c93d);
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+      background-color: #282829ff;
+      color: white;
+      border-radius: 10px;
+    }
+
+    .fixed-on-scroll {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1050;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      animation: slideDown 0.3s ease-in-out;
+    }
+
+    @keyframes slideDown {
+      from {
+        transform: translateY(-100%);
+      }
+
+      to {
+        transform: translateY(0%);
+      }
+    }
+
+    .contact-form {
+      color: white;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    }
+
+    iframe {
+      border-radius: 8px;
+    }
+
+    .location-box {
+      margin-top: 20px;
+      background-color: #ffffff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+    }
+
+    .arrow-btn {
+      background-color: #ddd;
+      border: none;
+      font-size: 24px;
+      padding: 5px 10px;
+      cursor: pointer;
+    }
+
+    .arrow-btn:hover {
+      background-color: #bbb;
+    }
+  </style>
+</head>
+
+<body class="bg-dark">
+ <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+  <div class="container-fluid">
+    <!-- Brand -->
+    <a href="#" class="navbar-brand fs-2" 
+       style="font-family: 'Times New Roman', Times, serif; margin-left: 1rem;">
+      <i class="fa-solid fa-mitten fa-flip" style="color: #fcfcfd;"></i> GloveHub
+    </a>
+
+    <!-- Toggler for mobile -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" 
+            data-bs-target="#navbarNav" aria-controls="navbarNav" 
+            aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <!-- Left-aligned nav links -->
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0 text-center">
+        <li class="nav-item">
+          <a class="nav-link" href="#homepage"><i class="fa-solid fa-house me-2"></i>Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#about"><i class="fa-solid fa-circle-info me-2"></i>About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#products"><i class="fa-solid fa-box-open me-2"></i>Products</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#contactus"><i class="fa-solid fa-envelope me-2"></i>Contact</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#now"><i class="fa-solid fa-cart-plus me-2"></i>Cart</a>
+        </li>
+      </ul>
+
+      <!-- Search bar -->
+      <form class="d-flex mb-2 mb-lg-0 me-lg-3" role="search">
+        <input class="form-control me-2" type="search" placeholder="Search..." aria-label="Search">
+        <button class="btn btn-outline-light" type="submit">Search</button>
+      </form>
+
+      <!-- Buttons (Sign in / Sign up / Admin) -->
+      <div class="d-flex flex-column flex-lg-row align-items-center gap-2">
+        <button class="btn btn-light w-100 w-lg-auto">Sign in</button>
+        <a href="signup.php" class="btn btn-outline-light w-100 w-lg-auto">Sign up</a>
+        <a href="admin.php" class="btn btn-dark w-100 w-lg-auto">Admin-login</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+  <br><br>
+  <div class="container-fluid text-center  p-5 "
+    style="background-image: url(../images/—Pngtree—close-up\ of\ intricate\ black\ and_16547373.png); background-repeat: no-repeat; background-size: cover;">
+    <div class="container p-5">
+      <h1 class="text-light fs-1" style="font-family: 'Poiret One' , cursive;">The Gloves Shop <br>
+        <p class="fs-4">Comfort, Craft, and Care in Every Pair</p>
+      </h1>
+      <a href="products.php" class="b1 btn btn-outline-light px-4 mb-5">Order Now</a>
+    </div>
+  </div>
+
+
+
+  </div>
+  </div>
+  </div>
+  <h1 class="text-center text-light mb-5 mt-4 pb-3 " style="font-family: 'Poiret One' , cursive;">Welcome to Homepage
+  </h1>
+  <div class="container-fluid" id="homepage">
+
+    <div class="div1 container">
+      <div class="container my-5 ">
+        <div class="row">
+          <div class="col-md-6">
+            <h5 class="fs-2" style="color: rgb(215, 145, 28);font-family: 'Poiret One' , cursive;">"This is Schilers.
+              Premium Handwear Theme. Purchase it and Level Up Your Grip."</h5>
+            <p class="p3 fs-6" style="color: white; font-family: 'Jost' , sans-serif;">Protect your hands with comfort
+              and style, crafted for every task and season. Designed to endure long hours of work and adventure with
+              ease. Feel the perfect grip, flexibility, and strength in every motion. Experience gloves made to perform
+              and last.</p>
+            <p class="p4 fs-6" style="color: white; font-family: 'Jost' , sans-serif;">Crafted with precision and care
+              to protect your hands through every task and challenge. Built for comfort, durability, and performance in
+              any condition. Experience the perfect fit, flexibility, and grip that keeps you moving with confidence.
+            </p>
+          </div>
+          <div class="col-md-6">
+            <img src="../images/home2.avif" alt="" class="img-fluid w-100">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container-fluid " id="products">
+    <h1 class="text-light text-center  mb-3"><i class="fa-solid fa-box-open me-2"></i> Our Products</h1>
+    <div class="row">
+
+      <div class="col-md-4 border-end">
+        <div class="image-carousel d-flex align-items-center mb-3 ">
+          <button id="prevBtn" class="arrow-btn">&#10094;</button>
+          <img id="cakeimg" class="img-fluid" src="../images/motor1.jpg" style="width:23rem; height:18.5rem;">
+          <button id="nextBtn" class="arrow-btn">&#10095;</button>
+        </div>
+
+        <h3 class="text-light mt-4" style="font-family: 'Poiret One', cursive;">Vehicle Gloves</h3>
+        <span class="fs-4" style="font-family: 'Jost', sans-serif; color: rgb(229, 191, 74);">$40.00</span>
+        <br>
+        <a href="orders.php" class="btn btn-outline-light mt-3">
+          <i class="fa-solid fa-cart-plus me-2"></i>Order Now
+        </a>
+        <br><br>
+      </div>
+      <div class="col-md-4 border-end">
+        <div class="image-carousel d-flex align-items-center mb-3 ">
+          <button id="prevBtn1" class="arrow-btn ">&#10094;</button>
+          <img id="pasteryimg" class="img-fluid" src="../images/mech1.jpg" style="width:23rem; height:18.5rem;">
+          <button id="nextBtn1" class="arrow-btn">&#10095;</button>
+        </div>
+
+        <h3 class="text-light mt-4" style="font-family: 'Poiret One', cursive;">Mechanics Gloves</h3>
+        <span class="fs-4" style="font-family: 'Jost', sans-serif; color: rgb(229, 191, 74);">$36.00</span>
+        <br>
+        <a href="orders.php" class="btn btn-outline-light mt-3">
+          <i class="fa-solid fa-cart-plus me-2"></i>Order Now
+        </a>
+        <br><br>
+      </div>
+      <div class="col-md-4 border-end">
+        <div class="image-carousel d-flex align-items-center mb-3 " style="width:23rem;">
+          <button id="prevBtn2" class="arrow-btn">&#10094;</button>
+          <img id="coffeeimg" class="img-fluid" src="../images/split1.jpg" style="width:23rem; height:18.5rem;">
+          <button id="nextBtn2" class="arrow-btn">&#10095;</button>
+        </div>
+
+        <h3 class="text-light mt-4" style="font-family: 'Poiret One', cursive;">Split Gloves</h3>
+        <span class="fs-4" style="font-family: 'Jost', sans-serif; color: rgb(229, 191, 74);">$24.00</span>
+        <br>
+        <a href="orders.php" class="btn btn-outline-light mt-3">
+          <i class="fa-solid fa-cart-plus me-2"></i>Order Now
+        </a>
+        <br><br>
+      </div>
+      <div class="content container-fluid" id="about">
+        <section class="about-section mb-5 py-5">
+          <h1>About <span style="color: #ffd700;">Gloves</span></h1>
+          <p>
+GloveHub — where every great moment begins with the perfect fit.
+We are your trusted online destination for durable, stylish, and expertly crafted gloves.
+Whether you’re working, riding, training, or just stepping out in style —
+we’ve got the perfect pair for every occasion.
+
+At GloveHub, making gloves isn’t just a process — it’s an art.
+Each pair is designed with care, precision, and premium materials.
+From classic designs to modern innovations,
+we combine comfort with craftsmanship to deliver gloves that perform as great as they look.
+          </p>
+        </section>
+
+        <div class="row">
+          <div class="col-lg-4 col-md-12 rounded-cirlce">
+
+            <section class="mission-vision container">
+              <div class="card p-4 text-center mission">
+                <div class="card-body">
+                  <i class="bi bi-bullseye"></i>
+                  <h5 class="card-title fw-bold">Our Mission</h5>
+                  <p class="card-text">
+                    To provide reliable and affordable products with a smooth experience and
+                    excellent customer support.
+                  </p>
+                </div>
+              </div>
+          </div>
+          <div class="col-lg-4 col-md-12  rounded-cirlce">
+
+            <div class="card p-4 text-center vision">
+              <div class="card-body">
+                <i class="bi bi-lightbulb"></i>
+                <h5 class="card-title fw-bold">Our Vision</h5>
+                <p class="card-text">
+                  To become a leading e-commerce platform that connects innovation and customer satisfaction
+                  through technology and trust.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-12  rounded-cirlce">
+            <div class="card p-4 text-center team">
+              <div class="card-body">
+                <i class="bi bi-people"></i>
+                <h5 class="card-title fw-bold">Our Team</h5>
+                <p class="card-text">
+                  Our dedicated team of workers and customer specialists work tirelessly
+                  to keep your shopping experience fast.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        </section>
+
+
+        <div class="container my-5">
+          <h2 class="text-center text-light mb-4" id="contactus">Contact Us</h2>
+          <div class="row g-4">
+            <div class="col-md-7"
+              style="background-image: url(../images/bg2.jpg);background-repeat: no-repeat; background-size: 100% 100%; ">
+              <div class="contact-form">
+                <form>
+                  <div class="mb-3">
+                    <label for="username" class="form-label">Username</label>
+                    <input type="text" class="form-control" id="username" placeholder="Enter your name" required>
+                  </div>
+
+                  <div class="mb-3">
+                    <label for="email" class="form-label">Email address</label>
+                    <input type="email" class="form-control" id="email" placeholder="name@example.com" required>
+                  </div>
+
+                  <div class="mb-3">
+                    <label for="address" class="form-label">Address</label>
+                    <textarea class="form-control" id="address" rows="3" placeholder="Enter your address"
+                      required></textarea>
+                  </div>
+
+                  <button type="submit" class="btn btn-primary">Send Message</button>
+                </form>
+              </div>
+            </div>
+
+
+
+            <!-- Right Column: Map and Location -->
+            <div class="col-md-5">
+              <div class="h-100">
+
+                <!-- Google Map -->
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.019317327572!2d-122.41941518468143!3d37.77492977975944!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8085808c89e8eebf%3A0xc0d6d3d9e7e2e225!2sSan%20Francisco%2C%20CA!5e0!3m2!1sen!2sus!4v1634629720434!5m2!1sen!2sus"
+                  width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy"
+                  referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+                <!-- Current Location Display -->
+                <div class="location-box">
+                  <h5>Your Current Location</h5>
+                  <p id="current-location">Click the button below to get your location.</p>
+                  <button class="btn btn-outline-primary btn-sm" onclick="getLocation()">Show My Location</button>
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+
+
+        <footer>
+          <div class="container">
+            <div class="col-md-12">
+              <h5 class="text-center text-light"><a href="" style="text-decoration: none;">@copyright</a> All right
+                Deserverd</h5>
+            </div>
+          </div>
+        </footer>
+        <script>
+          const imageList = [
+            '../images/cake1.jpg',
+            '../images/cake2.jpg',
+            '../images/cake3.jpg',
+            '../images/items1.jpg'
+          ];
+
+          let currentIndex = 0;
+          const productImage = document.getElementById('cakeimg');
+          const prevBtn = document.getElementById('prevBtn');
+          const nextBtn = document.getElementById('nextBtn');
+
+          nextBtn.addEventListener('click', () => {
+            currentIndex = (currentIndex + 1) % imageList.length;
+            productImage.src = imageList[currentIndex];
+          });
+
+          prevBtn.addEventListener('click', () => {
+            currentIndex = (currentIndex - 1 + imageList.length) % imageList.length;
+            productImage.src = imageList[currentIndex];
+          });
+          const imageList1 = [
+            '../images/pastery2.jpg',
+            '../images/pastery3.jpg',
+            '../images/pastery4.jpg',
+            '../images/pastery1.jpg'
+          ];
+
+          let currentIndex1 = 0;
+          const productImage1 = document.getElementById('pasteryimg');
+          const prevBtn1 = document.getElementById('prevBtn1');
+          const nextBtn1 = document.getElementById('nextBtn1');
+
+          nextBtn1.addEventListener('click', () => {
+            currentIndex1 = (currentIndex1 + 1) % imageList1.length;
+            productImage1.src = imageList1[currentIndex1];
+          });
+
+          prevBtn1.addEventListener('click', () => {
+            currentIndex1 = (currentIndex1 - 1 + imageList1.length) % imageList1.length;
+            productImage1.src = imageList1[currentIndex1];
+          });
+          const imageList2 = [
+            '../images/coffee2.jpg',
+            '../images/coffee3.jpg',
+            '../images/coffee4.jpg',
+            '../images/coffee1.jpg'
+          ];
+
+          let currentIndex2 = 0;
+          const productImage2 = document.getElementById('coffeeimg');
+          const prevBtn2 = document.getElementById('prevBtn2');
+          const nextBtn2 = document.getElementById('nextBtn2');
+
+          nextBtn2.addEventListener('click', () => {
+            currentIndex2 = (currentIndex2 + 1) % imageList2.length;
+            productImage2.src = imageList2[currentIndex2];
+          });
+
+          prevBtn2.addEventListener('click', () => {
+            currentIndex2 = (currentIndex2 - 1 + imageList2.length) % imageList2.length;
+            productImage2.src = imageList2[currentIndex2];
+          });
+        </script>
+
+</body>
+
+</html>
